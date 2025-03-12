@@ -15,6 +15,10 @@ jobs:
   apply:
     name: Apply changes
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [Akash Provider 0]
+    environment: ${{ matrix.environment }} 
     env:
         DOMAIN_NAME: ${{ vars.DOMAIN_NAME }}
     permissions: 
